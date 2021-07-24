@@ -21,7 +21,7 @@ PRACTICAL_PREFIX = "practical"
 # get folder names in a directory
 practical_dirs = [
     name
-    for name in os.listdir("./practicals")
+    for name in os.listdir("./practicals/")
     if (os.path.isdir(name) and name.find(PRACTICAL_PREFIX) != -1)
 ]
 
