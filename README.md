@@ -14,7 +14,7 @@ automatic screenshots and logging of practical files.
 
 - Automate making word files.
 - Improve synchronization of py runtime call in `screenshot.py`.
-- Automate conclusions using NLP.
+- Automate conclusions using NLP.(Main idea is by using few shot learning transformers! Mostly by GPT-Neo API.)
 
 ## Empty file struture
 
