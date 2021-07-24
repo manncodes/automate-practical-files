@@ -14,6 +14,7 @@ automatic screenshots and logging of practical files.
 
 - Automate making word files.
 - Improve synchronization of py runtime call in `screenshot.py`.
+- Automate conclusions using NLP.
 
 ## Empty file struture
 
