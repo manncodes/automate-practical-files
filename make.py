@@ -5,8 +5,11 @@ import subprocess
 from tqdm import tqdm
 from screenshot import getScreenshot
 
-ROOT_DIR = os.path.dirname(__file__)
-os.chdir(ROOT_DIR)
+PRACTICAL_DIR_NAME = "practicals"
+
+PRACTICAL_DIR = os.path.join(os.getcwd(), PRACTICAL_DIR_NAME) 
+
+os.chdir(PRACTICAL_DIR)
 
 logging.basicConfig(filename="practicalfiles.log", level=logging.INFO)
 
@@ -21,7 +24,7 @@ PRACTICAL_PREFIX = "practical"
 # get folder names in a directory
 practical_dirs = [
     name
-    for name in os.listdir("./practicals/")
+    for name in os.listdir(".")
     if (os.path.isdir(name) and name.find(PRACTICAL_PREFIX) != -1)
 ]
 
@@ -35,12 +38,13 @@ def get_file_names(dir_name):
 
 
 practical_dirs = sorted(practical_dirs, key=len)
+print(practical_dirs)
 
-for practical_dir in tqdm(practical_dirs, desc="overall progress", position=0):
-    files = get_file_names(practical_dir)
-    os.chdir(practical_dir) # change to practical's directory
+for practical_dir_name in tqdm(practical_dirs, desc="overall progress", position=0):
+    files = get_file_names(practical_dir_name)
+    os.chdir(practical_dir_name) # change to practical's directory
 
-    for file in tqdm(files, desc=f"{practical_dir} progress", position=1, leave=False):
+    for file in tqdm(files, desc=f"{practical_dir_name} progress", position=1, leave=False):
         # do shit here
         pyprocess = subprocess.check_call(
             ["start", "cmd", "/wait", "/k", "python", file],
@@ -49,12 +53,12 @@ for practical_dir in tqdm(practical_dirs, desc="overall progress", position=0):
         )
         time.sleep(1)  # for letting subprocess atleast spawn
         getScreenshot(
-            working_directory=os.path.join(ROOT_DIR, practical_dir),
+            working_directory=os.path.join(PRACTICAL_DIR, practical_dir_name),
             img_filename=file.split(".")[0],
         )
         
-    os.chdir(ROOT_DIR) # go back to main directory
-    logging.info(f"All screenshots of {practical_dir} are done.")
+    os.chdir(PRACTICAL_DIR) # go back to main directory
+    logging.info(f"All screenshots of {practical_dir_name} are done.")
 
 
 print("Finished screenshotting all the files!")

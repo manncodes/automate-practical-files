@@ -10,6 +10,11 @@ automatic screenshots and logging of practical files.
 - [ ] run `make.py` to create the screenshots and log files. Screenshots are saved in respective folders.
 - [ ] check `practicalfiles.log` file if error persist.
 
+## TODO
+
+- Automate making word files.
+- Improve synchronization of py runtime call in `screenshot.py`.
+
 ## empty file struture
 
 ```bash
