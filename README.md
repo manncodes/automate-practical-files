@@ -5,7 +5,7 @@ automatic screenshots and logging of practical files.
 ## steps
 
 - [ ] install required packages by running `pip install -requirements.txt`.
-- [ ] create a folder for the practical files by running `make_dir.py` in `practicals` directory.
+- [ ] create folders for the practical files by running `make_dir.py` in `practicals` directory.
 - [ ] write your practical files down in each folder respectively
 - [ ] run `make.py` to create the screenshots and log files. Screenshots are saved in respective folders.
 - [ ] check `practicalfiles.log` file if error persist.
