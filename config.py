@@ -1,0 +1,3 @@
+PRACTICAL_PREFIX = "practical "
+NUMBER_OF_PRACTICALS = 10
+PRACTICAL_DIR_NAME = "practicals"

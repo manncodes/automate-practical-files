@@ -15,7 +15,7 @@ automatic screenshots and logging of practical files.
 - Automate making word files.
 - Improve synchronization of py runtime call in `screenshot.py`.
 
-## empty file struture
+## Empty file struture
 
 ```bash
 :
